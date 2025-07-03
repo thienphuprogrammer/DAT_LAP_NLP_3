@@ -1,0 +1,38 @@
+# Core libraries
+tensorflow>=2.12.0
+tensorflow-addons
+keras
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+nltk
+spacy
+
+# Computer Vision
+opencv-python
+Pillow
+
+# NLP & Transformers
+transformers>=4.20.0
+tokenizers
+datasets
+sentencepiece
+
+# Metrics
+sacrebleu
+rouge-score
+
+# Visualization
+wordcloud
+plotly
+
+# Language-specific tokenizers
+fugashi  # Japanese
+unidic-lite  # Japanese
+vietokenizer  # Vietnamese
+
+# Utilities
+tqdm
+wandb  # Optional for experiment tracking
