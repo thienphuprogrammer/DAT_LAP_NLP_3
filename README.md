@@ -57,7 +57,9 @@ Natural‑language processing (NLP) and multimodal learning power search, assist
 | σ (stdev)               | 6.2 tokens           | Long‑tail distribution—imbalance to address |
 | Short \| Medium \| Long | 34 % \| 49 % \| 17 % | Long captions are minority class            |
 
-![Word‑frequency cloud](sandbox:/mnt/data/wordcloud_placeholder.png)
+![Seqence Length Distribution](./results/images/task1_1.png)
+![Seqence Length Distribution](./results/images/task1_2.png)
+![Top 20 Word count Distribution](./results/images/task1_4.png)
 
 > **Detailed explanation:**  The heavy‑tail length distribution motivates *weighted loss* in Task 2. The word cloud exposes dominant function words; removing them marginally boosts BLEU in Task 3 by 0.6.
 
@@ -74,6 +76,7 @@ Natural‑language processing (NLP) and multimodal learning power search, assist
 | **Bi‑LSTM + Attention**   | 3.4 M  | 0.84     | 0.82     | 22                      |
 | **DistilBERT (3 epochs)** | 66 M   | **0.87** | **0.85** | 11                      |
 
+![History train]()
 ![F1 curves](sandbox:/mnt/data/task2_f1_curves.png)
 ![Confusion Matrix](sandbox:/mnt/data/task2_confusion_matrix.png)
 
@@ -96,7 +99,8 @@ Natural‑language processing (NLP) and multimodal learning power search, assist
 | **+ Attention**         | 32.1       | 31.5        | 20.4       | better on long sentences |
 | **MarianMT (2 epochs)** | **36.8**   | **36.2**    | 14.9       | pretrained on CCMatrix   |
 
-![BLEU curves](sandbox:/mnt/data/task3_bleu_curves.png)
+![Translation Loss](./results/images/task3_1.png)
+![Translation Accuracy](./results/images/task3_2.png)
 
 > **Detailed explanation:**  MarianMT converges fast (two epochs) because its encoder–decoder were pretrained on half a billion sentence pairs. Fine‑tuning mainly updates LN & FFN layers (<20 % weights). On hardware‑limited setups, this gives best *BLEU‑per‑GPU‑minute*.
 
@@ -115,6 +119,10 @@ Natural‑language processing (NLP) and multimodal learning power search, assist
 | CNN + LSTM             | 60.2     | 27.4     | 0.73     | 0.15     |
 | **+ Attention**        | 62.8     | 28.7     | 0.79     | 0.17     |
 | **ViT‑GPT2 (1 epoch)** | **66.5** | **30.1** | **0.83** | **0.19** |
+
+
+![Translation Loss](./results/images/task4_6.png)
+![Translation Accuracy](./results/images/task4_7.png)
 
 > **Detailed explanation:**  Spatial attention lifts CIDEr (+0.06) by sharpening noun precision (fewer “man/dog” swaps). ViT‑GPT2 further helps with colour adjectives because visual patches align with textual sub‑tokens.
 
